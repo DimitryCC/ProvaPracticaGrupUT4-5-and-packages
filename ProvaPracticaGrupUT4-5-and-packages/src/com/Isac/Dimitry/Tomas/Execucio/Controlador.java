@@ -1,7 +1,9 @@
 package com.Isac.Dimitry.Tomas.Execucio;
 
+import java.util.ArrayList;
+
 import com.Isaac.Dimitry.Clases.*;
-import com.Isaac.Dimitry.Exeptions.ValoracionesExeption;
+import com.Isaac.Dimitry.Exeptions.*;
 
 public class Controlador {
 	public void Valorar(Usuari creador, int valoracio) {
@@ -12,7 +14,17 @@ public class Controlador {
 			e.printStackTrace();
 		}
 	}
+	public void Comentar(Usuari creador, String Comentario) {
+		Comentarios comentario = new Comentarios(creador, Comentario);
+	}
+	
 	public void iniciador() {
+		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
+		ArrayList<Usuari> usuarios = new ArrayList<Usuari>();
+		for (int i = 0; i < nombre.length; i++) {
+			usuarios.add(Usuari usuari = new Usuari(nombre[i]));
+			
+		}
 		
 	}
 }

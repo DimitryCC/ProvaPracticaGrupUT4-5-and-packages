@@ -6,7 +6,7 @@ public class Comentarios {
 	private String comentari;
 	private boolean validacion = false;
 	
-	Comentarios (Usuari creador, String comentari){
+	public Comentarios (Usuari creador, String comentari){// si no especificamos que es publico solo pueden llamar a la funcion este objeto y sus "hiso"
 		setCreador(creador);
 		setComentari(comentari);
 	}
