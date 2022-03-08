@@ -5,5 +5,6 @@ public class Ejecucion {
 	public static void main(String[] args) {
 		
 		Controlador hola = new Controlador();
+		hola.iniciadorUsuarios();
 	}
 }
