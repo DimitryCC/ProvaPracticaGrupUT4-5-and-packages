@@ -7,7 +7,7 @@ public class Valoraciones {
 	private Usuari creador;
 	private int valoracio;
 	//Constructor
-	Valoraciones(Usuari creador, int valoracio) throws ValoracionesExeption {
+	public Valoraciones(Usuari creador, int valoracio) throws ValoracionesExeption {
 		setCreador(creador);
 		setValoracio(valoracio);
 	}
