@@ -1,6 +1,8 @@
 package com.Isac.Dimitry.Tomas.Execucio;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.Isaac.Dimitry.Clases.*;
 import com.Isaac.Dimitry.Exeptions.*;
@@ -44,7 +46,20 @@ public class Controlador {
 		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Cafeteria", "Un lugar agradable",Ter);espacios.add(Tercero);
 		String[] quar ={"Pintura"}; Espacio quararto = new Espacio("Cafeteria", "Un lugar agradable",quar);espacios.add(quararto);
 		String[] qint ={"Pintura"}; Espacio qinto = new Espacio("Cafeteria", "Un lugar agradable",qint);espacios.add(qinto);
-		return null;
+		return espacios;
 	}
-	
+	public ArrayList<Exposicions> inicialitzadorExposicions(){
+		ArrayList<Exposicions> expos = new ArrayList<Exposicions>();
+		String[] mod1 ={"Pintura", "Escultura",};
+		String[] mod2 ={"Realisme","Abstraccio"};
+		String[] mod3 ={"Pintura","Realisme","Abstraccio"};
+		String[] mod4 ={"Fotografia","Realisme","Abstraccio"};
+		String[] mod5 ={"Realisme"};
+		Exposicions Primero = new Exposicions(mod1, "Antigua grecia", "26-05-2022");expos.add(Primero);
+		Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", "26-05-2022");expos.add(Segundo);
+		Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", "26-05-2022");expos.add(Tercero);
+		Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", "26-05-2022");
+		Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", "26-05-2022");
+		return expos;
+	}
 }
