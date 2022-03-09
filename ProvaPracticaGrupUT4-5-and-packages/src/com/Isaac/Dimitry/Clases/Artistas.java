@@ -14,4 +14,5 @@ public class Artistas {
 		this.nacionalitat = nacionalitat;
 	}
 	
+	
 }
