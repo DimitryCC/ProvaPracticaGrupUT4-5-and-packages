@@ -17,20 +17,29 @@ public class Controlador {
 	public void Comentar(Usuari creador, String Comentario) {
 		Comentarios comentario = new Comentarios(creador, Comentario);
 	}
-	
+	public void inicialitzador() {
+		iniciadorUsuarios();
+		inicialiArtistas();
+	}
 	public ArrayList<Usuari> iniciadorUsuarios() {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
 		ArrayList<Usuari> usuarios = new ArrayList<Usuari>();
 		Usuari Primero = new Usuari(nombre[0]);usuarios.add(Primero);Usuari Segundo = new Usuari(nombre[1]);usuarios.add(Segundo);Usuari Tercero = new Usuari(nombre[2]);usuarios.add(Tercero);Usuari Quarto = new Usuari(nombre[3]);usuarios.add(Quarto);Usuari Quinto = new Usuari(nombre[4]);usuarios.add(Quinto);
 		return usuarios;
 	}
-	public ArrayList<Artistas> inicialiartistas(){
+	public ArrayList<Artistas> inicialiArtistas(){
 		ArrayList<Artistas> artista= new ArrayList<Artistas>();
 		Artistas Primero = new Artistas("Juana", "Español"); artista.add(Primero);
 		Artistas Segundo = new Artistas("Enrique", "Frances"); artista.add(Segundo);
 		Artistas Tercero = new Artistas("Adolfo","Aleman"); artista.add(Tercero);
 		Artistas Quarto = new Artistas("Rigoberto", "Portugues"); artista.add(Quarto);
 		Artistas Quinto = new Artistas("Andres","Ingles"); artista.add(Quinto);
-	return artista;
+		return artista;
 	}
+	//Public ArrayList<Obras> = new ArrayList<Obras>();
+	public ArrayList<Espacio> inicializarEspacios(){
+		Espacio Primero = new Espacio("Cafeteria", "Un lugar agradable","Cafe, Servicios");
+		return null;
+	}
+	
 }

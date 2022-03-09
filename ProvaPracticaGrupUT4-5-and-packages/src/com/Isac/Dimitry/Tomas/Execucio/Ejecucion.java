@@ -7,4 +7,7 @@ public class Ejecucion {
 		Controlador hola = new Controlador();
 		hola.iniciadorUsuarios();
 	}
+	public enum servicios{
+	BARR, RESTAURANTE, SERVICIOS, 
+	}
 }
