@@ -37,8 +37,13 @@ public class Controlador {
 		return artista;
 	}
 	//Public ArrayList<Obras> = new ArrayList<Obras>();
-	public ArrayList<Espacio> inicializarEspacios(){
-		Espacio Primero = new Espacio("Cafeteria", "Un lugar agradable","Cafe, Servicios");
+	public ArrayList<Espacio> inicializarEspacios() throws EspacioExeption{
+		ArrayList<Espacio> espacios = new ArrayList<Espacio>();
+		String[] Prim ={"Pintura"}; Espacio Primero = new Espacio("Cafeteria", "Un lugar agradable",Prim);espacios.add(Primero);
+		String[] Seg ={"Pintura"}; Espacio Segundo = new Espacio("Cafeteria", "Un lugar agradable",Seg);espacios.add(Segundo);
+		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Cafeteria", "Un lugar agradable",Ter);espacios.add(Tercero);
+		String[] quar ={"Pintura"}; Espacio quararto = new Espacio("Cafeteria", "Un lugar agradable",quar);espacios.add(quararto);
+		String[] qint ={"Pintura"}; Espacio qinto = new Espacio("Cafeteria", "Un lugar agradable",qint);espacios.add(qinto);
 		return null;
 	}
 	

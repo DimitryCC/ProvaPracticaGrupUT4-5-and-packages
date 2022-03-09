@@ -1,25 +1,20 @@
 package com.Isaac.Dimitry.Clases;
 
 import java.util.ArrayList;
-
-import javax.management.loading.PrivateClassLoader;
-
-public enum modalitat{
-	PINTURA_SURREALISTA, FOTOGRAFIA, PINTURA_MODERNISTA, ESCULTURA 
-}
+import java.util.Date;
 
 public class Exposicions {
 	//Atributs
-	private Artistas artista;
-	private modalitat modalitats;
+	private String titulo;
+	private String[] modalitats;
 	private ArrayList<Obras> obraDestacada = new ArrayList<Obras>();
 	private ArrayList<Artistas> artistes = new ArrayList<Artistas>();
+	private Date data;
 	// Constructors
 	
-	public Exposicions(Obras obraDestacada, ArrayList<Artistas> artistes) {
-		super();
-		this.obraDestacada = obraDestacada;
-		this.artistes = artistes;
+	public Exposicions(String[] modalitats, String Nombre) {
+		this.modalitats = modalitats;
+		this.titulo = Nombre;
 	}
 	
 }

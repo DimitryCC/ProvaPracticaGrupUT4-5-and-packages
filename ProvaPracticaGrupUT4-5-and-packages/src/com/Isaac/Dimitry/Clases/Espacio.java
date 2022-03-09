@@ -13,7 +13,7 @@ public class Espacio {
 	private ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
 	private String[] Servicios;
 	//Constructor
-	public Espacio(String nom, String detalles, String servicios) throws EspacioExeption {
+	public Espacio(String nom, String detalles, String[] servicios) throws EspacioExeption {
 		//Usaremos en este caso los seters para generar el espacio ya quesi solo deveremos especificar las exepciones en estos
 		setNom(nom);
 		setDetalles(detalles);
