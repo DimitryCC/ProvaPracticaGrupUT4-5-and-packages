@@ -19,10 +19,6 @@ public class Controlador {
 	public void Comentar(Usuari creador, String Comentario) {
 		Comentarios comentario = new Comentarios(creador, Comentario);
 	}
-	public void inicialitzador() {
-		iniciadorUsuarios();
-		inicialiArtistas();
-	}
 	public ArrayList<Usuari> iniciadorUsuarios() {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
 		ArrayList<Usuari> usuarios = new ArrayList<Usuari>();
@@ -50,16 +46,26 @@ public class Controlador {
 	}
 	public ArrayList<Exposicions> inicialitzadorExposicions(){
 		ArrayList<Exposicions> expos = new ArrayList<Exposicions>();
-		String[] mod1 ={"Pintura", "Escultura",};
-		String[] mod2 ={"Realisme","Abstraccio"};
-		String[] mod3 ={"Pintura","Realisme","Abstraccio"};
-		String[] mod4 ={"Fotografia","Realisme","Abstraccio"};
-		String[] mod5 ={"Realisme"};
-		Exposicions Primero = new Exposicions(mod1, "Antigua grecia", "26-05-2022");expos.add(Primero);
-		Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", "26-05-2022");expos.add(Segundo);
-		Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", "26-05-2022");expos.add(Tercero);
-		Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", "26-05-2022");
-		Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", "26-05-2022");
+			String[] mod1 ={"Pintura", "Escultura",};
+			String[] mod2 ={"Realisme","Abstraccio"};
+			String[] mod3 ={"Pintura","Realisme","Abstraccio"};
+			String[] mod4 ={"Fotografia","Realisme","Abstraccio"};
+			String[] mod5 ={"Realisme"};
+			Exposicions Primero = new Exposicions(mod1, "Antigua grecia", "26-05-2022");expos.add(Primero);
+			Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", "26-05-2022");expos.add(Segundo);
+			Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", "26-05-2022");expos.add(Tercero);
+			Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", "26-05-2022");
+			Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", "26-05-2022");
 		return expos;
+	}
+	public ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris){
+		ArrayList<Comentarios> coment = new ArrayList<Comentarios>();
+		
+			Comentarios Primero = new	Comentarios(usuaris.get(0), "Ha sido genial");
+			Comentarios Segundo = new	Comentarios(usuaris.get(1), "Ha sido genial");
+			Comentarios Tercero = new	Comentarios(usuaris.get(2), "Ha sido genial");
+			Comentarios Quinto = new	Comentarios(usuaris.get(3), "Ha sido genial");
+			Comentarios Quarto = new	Comentarios(usuaris.get(4), "Ha sido genial");
+		return coment; 
 	}
 }
