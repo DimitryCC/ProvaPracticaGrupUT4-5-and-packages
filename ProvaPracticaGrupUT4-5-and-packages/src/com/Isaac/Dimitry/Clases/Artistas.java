@@ -7,12 +7,19 @@ public class Artistas {
 	private String nomArtista;
 	private String nacionalitat;
 	private ArrayList<Obras> obras = new ArrayList<Obras>();
-	//Constructor
 	
-	public Artistas(String nomArtista, String nacionalitat) {
+	public Artistas(String nomArtista, String nacionalitat, ArrayList<Obras> obras) {
 		this.nomArtista = nomArtista;
 		this.nacionalitat = nacionalitat;
+		this.obras = obras;
 	}
-	
-	
+	public String getNacionalitat() {
+		return nacionalitat;
+	}
+	public String getNomArtista() {
+		return nomArtista;
+	}
+	public void setNacionalitat(String nacionalitat) {
+		this.nacionalitat = nacionalitat;
+	}
 }
