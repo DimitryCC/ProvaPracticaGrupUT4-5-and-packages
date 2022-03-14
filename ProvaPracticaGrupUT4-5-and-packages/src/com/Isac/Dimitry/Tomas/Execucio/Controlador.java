@@ -19,15 +19,13 @@ public class Controlador {
 	public void Comentar(Usuari creador, String Comentario) {
 		Comentarios comentario = new Comentarios(creador, Comentario);
 	}
-	public ArrayList<Usuari> iniciadorUsuarios() {
+	public ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
-		ArrayList<Usuari> usuarios = new ArrayList<Usuari>();
 		Usuari Primero = new Usuari(nombre[0]);usuarios.add(Primero);Usuari Segundo = new Usuari(nombre[1]);usuarios.add(Segundo);Usuari Tercero = new Usuari(nombre[2]);usuarios.add(Tercero);Usuari Quarto = new Usuari(nombre[3]);usuarios.add(Quarto);Usuari Quinto = new Usuari(nombre[4]);usuarios.add(Quinto);
 		return usuarios;
 	}
-	public ArrayList<Artistas> inicialiArtistas(){
-		ArrayList<Artistas> artista= new ArrayList<Artistas>();
-		Artistas Primero = new Artistas("Juana", "Español"); artista.add(Primero);
+	public ArrayList<Artistas> inicialiArtistas(ArrayList<Artistas> artista) throws ArtistaExeption {
+		Artistas Primero = new Artistas("Juana", "Espanol"); artista.add(Primero);
 		Artistas Segundo = new Artistas("Enrique", "Frances"); artista.add(Segundo);
 		Artistas Tercero = new Artistas("Adolfo","Aleman"); artista.add(Tercero);
 		Artistas Quarto = new Artistas("Rigoberto", "Portugues"); artista.add(Quarto);
@@ -35,8 +33,7 @@ public class Controlador {
 		return artista;
 	}
 	//Public ArrayList<Obras> = new ArrayList<Obras>();
-	public ArrayList<Espacio> inicializarEspacios() throws EspacioExeption{
-		ArrayList<Espacio> espacios = new ArrayList<Espacio>();
+	public ArrayList<Espacio> inicializarEspacios(ArrayList<Espacio> espacios) throws EspacioExeption{
 		String[] Prim ={"Pintura"}; Espacio Primero = new Espacio("Cafeteria", "Un lugar agradable",Prim);espacios.add(Primero);
 		String[] Seg ={"Pintura"}; Espacio Segundo = new Espacio("Cafeteria", "Un lugar agradable",Seg);espacios.add(Segundo);
 		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Cafeteria", "Un lugar agradable",Ter);espacios.add(Tercero);
@@ -44,8 +41,7 @@ public class Controlador {
 		String[] qint ={"Pintura"}; Espacio qinto = new Espacio("Cafeteria", "Un lugar agradable",qint);espacios.add(qinto);
 		return espacios;
 	}
-	public ArrayList<Exposicions> inicialitzadorExposicions(){
-		ArrayList<Exposicions> expos = new ArrayList<Exposicions>();
+	public ArrayList<Exposicions> inicialitzadorExposicions(ArrayList<Exposicions> expos){
 			String[] mod1 ={"Pintura", "Escultura",};
 			String[] mod2 ={"Realisme","Abstraccio"};
 			String[] mod3 ={"Pintura","Realisme","Abstraccio"};
@@ -58,9 +54,7 @@ public class Controlador {
 			Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", "26-05-2022");
 		return expos;
 	}
-	public ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris){
-		ArrayList<Comentarios> coment = new ArrayList<Comentarios>();
-		
+	public ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris,ArrayList<Comentarios> coment){
 			Comentarios Primero = new	Comentarios(usuaris.get(0), "Ha sido genial");
 			Comentarios Segundo = new	Comentarios(usuaris.get(1), "Ha sido genial");
 			Comentarios Tercero = new	Comentarios(usuaris.get(2), "Ha sido genial");
@@ -68,4 +62,17 @@ public class Controlador {
 			Comentarios Quarto = new	Comentarios(usuaris.get(4), "Ha sido genial");
 		return coment; 
 	}
+	public ArrayList<Valoraciones> inicializadorValoraciones(ArrayList<Usuari> usuaris, ArrayList<Valoraciones> Valors) throws ValoracionesExeption{
+		Valoraciones Primero = new Valoraciones(usuaris.get(0), 6); Valors.add(Primero);
+		Valoraciones Segundo = new Valoraciones(usuaris.get(1), 6); Valors.add(Segundo);
+		Valoraciones Tercero = new Valoraciones(usuaris.get(2), 6); Valors.add(Tercero);
+		Valoraciones Quinto = new Valoraciones(usuaris.get(3), 6); Valors.add(Quinto);
+		Valoraciones Quarto = new Valoraciones(usuaris.get(4), 6); Valors.add(Quarto);
+		return Valors;
+	}
+	//public ArrayList<Obras> inicializadorObras(ArrayList<Obras> Obrass){
+		/*
+		 * 
+		 */
+	//}
 }
