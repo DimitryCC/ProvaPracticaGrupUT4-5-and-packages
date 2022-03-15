@@ -17,6 +17,6 @@ public class Pruevas {
 		Usuari prueva = new Usuari("Pedro");
 		System.out.println( prueva.getNombre());
 		prueva=null;
-		System.out.println( prueva.getNombre());
 	}
+	
 }

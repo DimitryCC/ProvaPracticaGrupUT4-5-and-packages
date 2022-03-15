@@ -23,7 +23,7 @@ public class Exposicions {
 		}
 	}
 	public String setModalitats (ArrayList<Obras> obras2){
-		String listaObrasdevolucion;
+		String listadeModalitats="";
 		ArrayList<String> listamodalidaades = new ArrayList<String>();
 		for (int i = 0; i < obras2.size(); i++) {
 			if (i>0) {
@@ -34,7 +34,10 @@ public class Exposicions {
 				listamodalidaades.add(obras2.get(i).getModalitat());
 			}
 		}
-		return "holas";
+		for (int i = 0; i < listamodalidaades.size(); i++) {
+			listadeModalitats+=(listamodalidaades.get(i)+",");
+		}
+		return listadeModalitats;
 	}
 }
 /*
