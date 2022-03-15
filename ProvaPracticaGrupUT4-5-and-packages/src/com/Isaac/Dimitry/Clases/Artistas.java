@@ -24,7 +24,7 @@ public class Artistas {
 		if(matchFound) {
 			this.nomArtista = nomArtista;
 		} else {
-			throw new ArtistaExeption("El nombre del artist es incore");
+			throw new ArtistaExeption("El nombre del artist es incorrecto");
 		}
 	}
 	public void setNacionalitat(String nacionalitat2) throws ArtistaExeption {
@@ -40,7 +40,7 @@ public class Artistas {
 	public void setObras(ArrayList<Obras> obras2) throws ArtistaExeption {
 		ArrayList<Obras> obras = new  ArrayList<Obras>();
 		if (obras2.size()==0) {
-			throw new ArtistaExeption("El llistat de Obres no pot eatar buida");
+			throw new ArtistaExeption("El llistat de Obres no pot estar buida");
 		}else {
 			this.obras = obras2;
 		}
