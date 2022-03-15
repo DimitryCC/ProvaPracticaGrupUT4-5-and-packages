@@ -54,7 +54,12 @@ public class Artistas {
 	public ArrayList<Obras> getObras() {
 		return obras;
 	}
+	public boolean filtreArtista(String artista) { 
+		if (artista.equals(nomArtista)) {
+			return true;
+		
+		}else {
+			return false;
+			}
+	}
 }
-/*
- * Falta una funcio per filtrar el artiste (vasta que compari el nom de l'artiste y retorni un true o false)
- */
