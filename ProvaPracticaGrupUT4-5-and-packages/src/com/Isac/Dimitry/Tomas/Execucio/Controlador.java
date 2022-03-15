@@ -8,6 +8,15 @@ import com.Isaac.Dimitry.Clases.*;
 import com.Isaac.Dimitry.Exeptions.*;
 
 public class Controlador {
+	public void Controlador() {
+		ArrayList<Usuari> usuariosMuseo = new ArrayList<Usuari>();
+		ArrayList<Artistas> artistasMuseo
+		ArrayList<Espacio> espaciosMuseo
+		ArrayList<Exposicions> exposicionesMuseo
+		ArrayList<Comentarios> comentariosMuseo
+		ArrayList<Valoraciones> valoracionesMuseo
+		ArrayList<Obras> obrasMuseo
+	}
 	public void Valorar(Usuari creador, int valoracio) {
 		
 	}
@@ -67,7 +76,7 @@ public class Controlador {
 		return Valors;
 	}
 	private ArrayList<Obras> inicializadorObras(ArrayList<Obras> obrass, ArrayList<Artistas> artista){
-		Obras
+		
 		return obrass;
 		
 	}

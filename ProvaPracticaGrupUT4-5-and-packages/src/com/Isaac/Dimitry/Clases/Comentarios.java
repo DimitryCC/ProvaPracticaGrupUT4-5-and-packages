@@ -28,7 +28,6 @@ public class Comentarios {
 		return v = true; 
 	}
 	
-	filtreartista("hola");
 }
 /*
 *Falta en terminos generale la redundancia de datos
