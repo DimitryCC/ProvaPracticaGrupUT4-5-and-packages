@@ -36,7 +36,6 @@ public class Comentarios {
 		return v = true; 
 	}
 	
-	
 }
 /*
 *Falta en terminos generale la redundancia de datos
