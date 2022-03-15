@@ -70,9 +70,9 @@ public class Controlador {
 		Valoraciones Quarto = new Valoraciones(usuaris.get(4), 6); Valors.add(Quarto);
 		return Valors;
 	}
-	//public ArrayList<Obras> inicializadorObras(ArrayList<Obras> Obrass){
-		/*
-		 * 
-		 */
-	//}
+	public ArrayList<Obras> inicializadorObras(ArrayList<Obras> Obrass){
+		
+		return Obrass;
+		
+	}
 }

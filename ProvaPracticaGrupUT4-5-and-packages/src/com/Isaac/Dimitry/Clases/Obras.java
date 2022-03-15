@@ -26,3 +26,10 @@ public class Obras {
 	}
 	
 }
+/*
+ *En terminos generales
+ *poder enmagatzemar el autor (per aportar redundancia de dades)
+ *falta la El control de errores (important es una de les clases especificades coma minim es adir obligatoria)
+ * En termes especificas faltan que pugi amagatzamar imatges
+ * Funcio per mostrar el nom y modalitat
+ */

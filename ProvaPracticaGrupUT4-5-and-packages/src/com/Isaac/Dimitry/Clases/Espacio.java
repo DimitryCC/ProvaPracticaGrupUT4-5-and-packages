@@ -1,6 +1,5 @@
 package com.Isaac.Dimitry.Clases;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import com.Isaac.Dimitry.Exeptions.EspacioExeption;
@@ -8,6 +7,7 @@ import com.Isaac.Dimitry.Exeptions.EspacioExeption;
 public class Espacio {
 	//Atributos
 	private String nom;
+	private Exposicions espo;
 	private String detalles;
 	private ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
 	private ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
@@ -21,14 +21,14 @@ public class Espacio {
 		//faltan seters ya que estos no se deven inicializar ya que teoricamente se inicializaran durante el proceso de ejecucion esdecir los iniciara el programa
 	}
 	//Geters and Seters
-	void setNom(String nom) throws EspacioExeption {
+	private void setNom(String nom) throws EspacioExeption {
 		if (nom.length()==0) {
 			throw new EspacioExeption("El nombre de un espacio no puede sernulo");
 		} else {
 			this.nom = nom;
 		}
 	}
-	void setDetalles(String detalles) throws EspacioExeption {
+	private void setDetalles(String detalles) throws EspacioExeption {
 		this.detalles = detalles;
 		/*if (condition) {
 			*throw new EspacioExeption();
@@ -36,14 +36,23 @@ public class Espacio {
 		*	this.detalles = detalles;
 		}*/
 	}
-	void setValor(Valoraciones entradavalor) throws EspacioExeption {
+	//Esta vacio porque quiero que esta funcion pueda ser llamada por cualquier otra clase del paquete.
+	 void setValor(Valoraciones entradavalor) throws EspacioExeption {
 		valor.add(entradavalor);
 	}
-	void setComentariosEspacio(Comentarios EntradacomentariosEspacio) throws EspacioExeption {
+	 //Esta vacio porque quiero que esta funcion pueda ser llamada por cualquier otra clase del paquete.
+	 void setComentariosEspacio(Comentarios EntradacomentariosEspacio) throws EspacioExeption {
 		comentariosEspacio.add(EntradacomentariosEspacio);
 	}
-	void setServicios(String[] servicios) throws EspacioExeption {
+	private void setServicios(String[] servicios) throws EspacioExeption {
 		Servicios = servicios;
+	}
+	private void setExposicions(Exposicions espo2) throws EspacioExeption {
+		if (espo2.equals(null)) {
+			throw new EspacioExeption("No puede haver una exposicion igual a null");
+		} else {
+			this.espo=espo2;
+		}
 	}
 	String getNom() {
 		return nom;

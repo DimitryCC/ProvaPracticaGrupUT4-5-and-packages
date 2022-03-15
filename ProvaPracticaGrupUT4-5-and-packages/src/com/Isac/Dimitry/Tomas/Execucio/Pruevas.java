@@ -9,11 +9,14 @@ public class Pruevas {
 
 	public static void main(String[] args) {
 		ArrayList<Usuari> Users = new ArrayList<Usuari>();
-		ArrayList<>
 		Controlador Hola = new Controlador();
 		Hola.iniciadorUsuarios(Users);
 		for (Usuari usuari : Users) {
 			System.out.println(usuari.toString());
 		}
+		Usuari prueva = new Usuari("Pedro");
+		System.out.println( prueva.getNombre());
+		prueva=null;
+		System.out.println( prueva.getNombre());
 	}
 }

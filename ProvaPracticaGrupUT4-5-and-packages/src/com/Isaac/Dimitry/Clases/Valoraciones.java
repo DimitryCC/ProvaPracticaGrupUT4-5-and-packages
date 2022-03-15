@@ -6,20 +6,27 @@ public class Valoraciones {
 	//Atributos
 	private Usuari creador;
 	private int valoracio;
+	private Espacio espai;
 	//Constructor
-	public Valoraciones(Usuari creador, int valoracio) throws ValoracionesExeption {
+	public Valoraciones(Usuari creador, int valoracio, Espacio espai) throws ValoracionesExeption {
 		setCreador(creador);
 		setValoracio(valoracio);
+		setEspai(espai);
 	}
 	//geters y seters
 	public Usuari getCreador() {
+		
 		return creador;
 	}
 	public int getValoracio() {
 		return valoracio;
 	}
 	private void setCreador(Usuari creador) throws ValoracionesExeption {
-		this.creador = creador;
+		if (creador.equals(null)) {
+			throw new ValoracionesExeption("Error usuario ¡¡null!!");
+		} else {
+			this.creador = creador;
+		}
 	}
 	private void setValoracio(int valoracio) throws ValoracionesExeption {
 		if (valoracio<1||valoracio>10) {
@@ -28,4 +35,14 @@ public class Valoraciones {
 			this.valoracio = valoracio;
 		}
 	}
+	private void setEspai(Espacio esp) throws ValoracionesExeption {
+		if (esp.equals(null)) {
+			throw new ValoracionesExeption("El esàcio no puede ser null");
+		} else {
+			this.espai=esp;
+		}
+	}
 }
+/*
+ * Falta la funcion para 
+ */

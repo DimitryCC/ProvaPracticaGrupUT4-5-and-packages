@@ -55,3 +55,6 @@ public class Artistas {
 		return obras;
 	}
 }
+/*
+ * Falta una funcio per filtrar el artiste (vasta que compari el nom de l'artiste y retorni un true o false)
+ */

@@ -30,3 +30,7 @@ public class Comentarios {
 	
 	
 }
+/*
+*Falta en terminos generale la redundancia de datos
+*El tratamineto de errores
+*/
