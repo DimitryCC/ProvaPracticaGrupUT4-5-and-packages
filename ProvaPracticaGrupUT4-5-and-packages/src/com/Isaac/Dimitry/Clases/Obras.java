@@ -1,14 +1,19 @@
 package com.Isaac.Dimitry.Clases;
 
+import java.io.File;
+
 import com.Isaac.Dimitry.Exeptions.ObrasExeption;
 
 public class Obras {
 	private String nomObra;
 	private String modalitat;
+	private Artistas artista;
+	private File imatge;
 	
-	public Obras(String nomObra, String modalitat) {
-		this.nomObra = nomObra;
-		this.modalitat = modalitat; 
+	public Obras(String nomObra, String modalitat, Artistas artista) throws ObrasExeption {
+		setNomObra(nomObra);
+		setModalitat(modalitat); 
+		setArtista(artista);
 	}
 
 	public String getNomObra() {
@@ -26,6 +31,24 @@ public class Obras {
 	public String getModalitat() {
 		return modalitat;
 	}
+	
+	public void setArtista(Artistas artista) throws ObrasExeption {
+		if (artista.equals(null)) {
+			throw new ObrasExeption("L'artista es null");
+		}else {
+			this.artista = artista;
+		}
+		
+	}
+	public Artistas getArtista() {
+		return artista;
+	}
+	public void setImatge(File imatge) {
+		this.imatge = imatge;
+	}
+	public File getImatge() {
+		return imatge;
+	}
 
 	public void setModalitat(String modalitat) throws ObrasExeption {
 		if (nomObra.equals(null)) {
@@ -34,12 +57,7 @@ public class Obras {
 			this.modalitat = modalitat;
 		}		
 	}
-	
 }
 /*
- *En terminos generales
- *poder enmagatzemar el autor (per aportar redundancia de dades)
- *falta la El control de errores (important es una de les clases especificades coma minim es añadir obligatoria)
- * En termes especificas faltan que pugi amagatzamar imatges
  * Funcio per mostrar el nom y modalitat
  */
