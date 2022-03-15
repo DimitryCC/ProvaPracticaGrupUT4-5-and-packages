@@ -8,14 +8,29 @@ import com.Isaac.Dimitry.Clases.*;
 import com.Isaac.Dimitry.Exeptions.*;
 
 public class Controlador {
-	public void Controlador() {
+	private ArrayList<Usuari> usuariosMuseo;
+	private ArrayList<Artistas> artistasMuseo;
+	private ArrayList<Espacio> espaciosMuseo;
+	private ArrayList<Exposicions> exposicionesMuseo;
+	private ArrayList<Comentarios> comentariosMuseo;
+	private ArrayList<Valoraciones> valoracionesMuseo;
+	private ArrayList<Obras> obrasMuseo;
+	
+	public Controlador() throws ArtistaExeption, ValoracionesExeption {
 		ArrayList<Usuari> usuariosMuseo = new ArrayList<Usuari>();
-		ArrayList<Artistas> artistasMuseo
-		ArrayList<Espacio> espaciosMuseo
-		ArrayList<Exposicions> exposicionesMuseo
-		ArrayList<Comentarios> comentariosMuseo
-		ArrayList<Valoraciones> valoracionesMuseo
-		ArrayList<Obras> obrasMuseo
+		ArrayList<Artistas> artistasMuseo = new ArrayList<Artistas>();
+		ArrayList<Espacio> espaciosMuseo = new ArrayList<Espacio>();
+		ArrayList<Exposicions> exposicionesMuseo = new ArrayList<Exposicions>();
+		ArrayList<Comentarios> comentariosMuseo = new ArrayList<Comentarios>();
+		ArrayList<Valoraciones> valoracionesMuseo = new ArrayList<Valoraciones>();
+		ArrayList<Obras> obrasMuseo = new ArrayList<Obras>();
+		iniciadorUsuarios(usuariosMuseo);
+		inicialiArtistas(artistasMuseo);
+		inicialitzadorExposicions(exposicionesMuseo);
+		inicializadorComentarios(usuariosMuseo, comentariosMuseo);
+		inicializadorObras(obrasMuseo, artistasMuseo);
+		inicializadorValoraciones(usuariosMuseo, espaciosMuseo, valoracionesMuseo);
+		inicializadorObras(obrasMuseo, artistasMuseo);
 	}
 	public void Valorar(Usuari creador, int valoracio) {
 		
@@ -78,6 +93,14 @@ public class Controlador {
 	private ArrayList<Obras> inicializadorObras(ArrayList<Obras> obrass, ArrayList<Artistas> artista){
 		
 		return obrass;
+	}
+	public String mostrarTodo() {
+		String G="";
+		G+="Usuarios: \n";
+		for (int i = 0; i < usuariosMuseo.size(); i++) {
+			G+=(usuariosMuseo.toString())
+		}
+		return G;
 		
 	}
 }
