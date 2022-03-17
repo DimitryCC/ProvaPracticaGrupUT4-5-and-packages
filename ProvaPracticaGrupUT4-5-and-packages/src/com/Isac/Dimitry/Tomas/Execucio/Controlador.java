@@ -45,7 +45,14 @@ public class Controlador {
 	public void Comentar(Usuari creador, String Comentario) throws ComentariosException {
 		Comentarios comentario = new Comentarios(creador, Comentario);
 	}
-	
+	public String Filtro(String busqueda) {
+		for (int i = 0; i < espaciosMuseo.size(); i++) {
+			if (espaciosMuseo.get(i).getNom().equals(busqueda)) {
+				return espaciosMuseo.get(i).toString();
+			}
+		}
+		return "No esncontrado";
+	}
 	private ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) throws UsuariExeption {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
 		Usuari Primero = new Usuari(nombre[0]);usuarios.add(Primero);Usuari Segundo = new Usuari(nombre[1]);usuarios.add(Segundo);Usuari Tercero = new Usuari(nombre[2]);usuarios.add(Tercero);Usuari Quarto = new Usuari(nombre[3]);usuarios.add(Quarto);Usuari Quinto = new Usuari(nombre[4]);usuarios.add(Quinto);
@@ -61,11 +68,11 @@ public class Controlador {
 	}
 	//Public ArrayList<Obras> = new ArrayList<Obras>();
 	private ArrayList<Espacio> inicializarEspacios(ArrayList<Espacio> espacios) throws EspacioExeption{
-		String[] Prim ={"Pintura"}; Espacio Primero = new Espacio("Cafeteria", "Un lugar agradable",Prim);espacios.add(Primero);
+		String[] Prim ={"Pintura"}; Espacio Primero = new Espacio("Recepcion", "Un lugar agradable",Prim);espacios.add(Primero);
 		String[] Seg ={"Pintura"}; Espacio Segundo = new Espacio("Cafeteria", "Un lugar agradable",Seg);espacios.add(Segundo);
-		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Cafeteria", "Un lugar agradable",Ter);espacios.add(Tercero);
-		String[] quar ={"Pintura"}; Espacio quararto = new Espacio("Cafeteria", "Un lugar agradable",quar);espacios.add(quararto);
-		String[] qint ={"Pintura"}; Espacio qinto = new Espacio("Cafeteria", "Un lugar agradable",qint);espacios.add(qinto);
+		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Piscina", "Un lugar agradable",Ter);espacios.add(Tercero);
+		String[] quar ={"Pintura"}; Espacio quararto = new Espacio("gipnasio", "Un lugar agradable",quar);espacios.add(quararto);
+		String[] qint ={"Pintura"}; Espacio qinto = new Espacio("Bar", "Un lugar agradable",qint);espacios.add(qinto);
 		return espacios;
 	}
 	private ArrayList<Exposicions> inicialitzadorExposicions(ArrayList<Exposicions> expos){

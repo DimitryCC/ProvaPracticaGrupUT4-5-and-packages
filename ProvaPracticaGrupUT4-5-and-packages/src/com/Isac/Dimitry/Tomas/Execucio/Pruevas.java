@@ -13,6 +13,7 @@ public class Pruevas {
 		try {
 			Controlador hola = new Controlador();
 			System.out.println( hola.mostrarTodo());
+			System.out.println( hola.Filtro("Cafeteria"));
 		} catch (ArtistaExeption | ValoracionesExeption e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

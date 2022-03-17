@@ -55,10 +55,10 @@ public class Espacio {
 			this.espo=espo2;
 		}
 	}
-	String getNom() {
+	public String getNom() {
 		return nom;
 	}
-	String getDetalles() {
+	public String getDetalles() {
 		return detalles;
 	}
 	public float getValor(ArrayList<Valoraciones> lista) {
@@ -75,7 +75,7 @@ public class Espacio {
 			System.out.println(comentariosEspacio.get(i).toString());
 		}
 	}
-	String[] getServicios() {
+	public String[] getServicios() {
 		return Servicios;
 	}
 	@Override
