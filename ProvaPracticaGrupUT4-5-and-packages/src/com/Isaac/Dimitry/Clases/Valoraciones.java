@@ -23,7 +23,7 @@ public class Valoraciones {
 	}
 	private void setCreador(Usuari creador) throws ValoracionesExeption {
 		if (creador.equals(null)) {
-			throw new ValoracionesExeption("Error usuario ¡¡null!!");
+			throw new ValoracionesExeption("Error usuario ï¿½ï¿½null!!");
 		} else {
 			this.creador = creador;
 		}
@@ -37,11 +37,16 @@ public class Valoraciones {
 	}
 	private void setEspai(Espacio esp) throws ValoracionesExeption {
 		if (esp.equals(null)) {
-			throw new ValoracionesExeption("El esàcio no puede ser null");
+			throw new ValoracionesExeption("El esï¿½cio no puede ser null");
 		} else {
 			this.espai=esp;
 		}
 	}
+	@Override
+	public String toString() {
+		return "Valoraciones [creador=" + creador + ", valoracio=" + valoracio + ", espai=" + espai + "]";
+	}
+	
 }
 /*
  * Falta la funcion para 

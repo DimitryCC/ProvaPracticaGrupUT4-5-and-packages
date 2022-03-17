@@ -1,6 +1,7 @@
 package com.Isaac.Dimitry.Clases;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.Isaac.Dimitry.Exeptions.EspacioExeption;
 
@@ -76,6 +77,11 @@ public class Espacio {
 	}
 	String[] getServicios() {
 		return Servicios;
+	}
+	@Override
+	public String toString() {
+		return "Espacio [nom=" + nom + ", espo=" + espo + ", detalles=" + detalles + ", valor=" + valor
+				+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios=" + Arrays.toString(Servicios) + "]";
 	}
 	
 }

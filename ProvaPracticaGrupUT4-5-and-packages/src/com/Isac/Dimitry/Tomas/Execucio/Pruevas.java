@@ -12,11 +12,11 @@ public class Pruevas {
 	public static void main(String[] args) {
 		try {
 			Controlador hola = new Controlador();
+			System.out.println( hola.mostrarTodo());
 		} catch (ArtistaExeption | ValoracionesExeption e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		/*
 		ArrayList<Usuari> Users = new ArrayList<Usuari>();
 		Controlador Hola = new Controlador();

@@ -35,6 +35,9 @@ public class Comentarios {
 	public boolean validar (Boolean v) {
 		return v = true; 
 	}
+	public String toString() {
+		return "Comentarios [creador=" + creador + ", comentari=" + comentari + ", validacion=" + validacion + "]";
+	}
 	
 }
 /*

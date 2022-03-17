@@ -1,8 +1,7 @@
 package com.Isaac.Dimitry.Clases;
 
 import java.util.ArrayList;
-
-import com.Isaac.Dimitry.Exeptions.UsuariException;
+import com.Isaac.Dimitry.Exeptions.UsuariExeption;
 
 public class Usuari {
 
@@ -11,16 +10,16 @@ public class Usuari {
 	private ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
 	private ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
 	
-	public Usuari (String nombre) throws UsuariException{// si no especificamos que es publico solo pueden llamar a la funcion este objeto y sus "hiso"
+	public Usuari (String nombre) throws UsuariExeption{// si no especificamos que es publico solo pueden llamar a la funcion este objeto y sus "hiso"
 		setNombre(nombre);
 	}
 	
 	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre) throws UsuariException {
+	public void setNombre(String nombre) throws UsuariExeption {
 		if (nombre == null) {
-			throw new UsuariException("Introduce el nombre del usuario");
+			throw new UsuariExeption("Introduce el nombre del usuario");
 		}
 		this.nombre = nombre;
 	}
@@ -47,6 +46,9 @@ public class Usuari {
 
 	public void setComentariosEspacio(ArrayList<Comentarios> comentariosEspacio) {
 		this.comentariosEspacio = comentariosEspacio;
+	}
+	public String toString() {
+		return "Usuari [nombre=" + nombre + ", valor=" + valor + ", comentariosEspacio=" + comentariosEspacio + "]";
 	}
 	
 }

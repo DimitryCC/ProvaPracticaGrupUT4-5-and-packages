@@ -1,9 +1,8 @@
 package com.Isaac.Dimitry.Clases;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 
 public class Exposicions {
 	//Atributs
@@ -12,15 +11,12 @@ public class Exposicions {
 	private ArrayList<Obras> obraDestacada;
 	private ArrayList<Obras> obras;
 	private ArrayList<Artistas> artistes;
-	private Date data;
+	private LocalDate data;
 	// Constructors
-	public Exposicions(String[] modalitats, String Nombre, String data) {
+	public Exposicions(String[] modalitats, String Nombre, int año, int mes, int dia) {
 		this.titulo = Nombre;
-		try {
-			this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		LocalDate dateTime = LocalDate.of(año, mes, dia);
+		this.data = dateTime;
 	}
 	public String setModalitats (ArrayList<Obras> obras2){
 		String listadeModalitats="";
@@ -38,6 +34,11 @@ public class Exposicions {
 			listadeModalitats+=(listamodalidaades.get(i)+",");
 		}
 		return listadeModalitats;
+	}
+	@Override
+	public String toString() {
+		return "Exposicions [titulo=" + titulo + ", modalitats=" + Arrays.toString(modalitats) + ", obraDestacada="
+				+ obraDestacada + ", obras=" + obras + ", artistes=" + artistes + ", data=" + data + "]";
 	}
 }
 /*

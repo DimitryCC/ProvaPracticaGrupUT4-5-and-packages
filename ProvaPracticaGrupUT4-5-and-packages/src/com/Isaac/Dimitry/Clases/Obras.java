@@ -57,6 +57,11 @@ public class Obras {
 			this.modalitat = modalitat;
 		}		
 	}
+	public String toString() {
+		return "Obras [nomObra=" + nomObra + ", modalitat=" + modalitat + ", artista=" + artista + ", imatge=" + imatge
+				+ "]";
+	}
+	
 }
 /*
  * Funcio per mostrar el nom y modalitat

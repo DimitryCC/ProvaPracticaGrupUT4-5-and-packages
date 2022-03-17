@@ -24,22 +24,29 @@ public class Controlador {
 		ArrayList<Comentarios> comentariosMuseo = new ArrayList<Comentarios>();
 		ArrayList<Valoraciones> valoracionesMuseo = new ArrayList<Valoraciones>();
 		ArrayList<Obras> obrasMuseo = new ArrayList<Obras>();
-		iniciadorUsuarios(usuariosMuseo);
-		inicialiArtistas(artistasMuseo);
-		inicialitzadorExposicions(exposicionesMuseo);
-		inicializadorComentarios(usuariosMuseo, comentariosMuseo);
-		inicializadorObras(obrasMuseo, artistasMuseo);
-		inicializadorValoraciones(usuariosMuseo, espaciosMuseo, valoracionesMuseo);
-		inicializadorObras(obrasMuseo, artistasMuseo);
+		
+		try {
+			this.usuariosMuseo = iniciadorUsuarios(usuariosMuseo);
+			this.comentariosMuseo = inicializadorComentarios(usuariosMuseo, comentariosMuseo);
+			this.espaciosMuseo = inicializarEspacios(espaciosMuseo);
+			this.artistasMuseo = inicialiArtistas(artistasMuseo);
+			this.obrasMuseo = inicializadorObras(obrasMuseo, artistasMuseo);
+			this.exposicionesMuseo = inicialitzadorExposicions(exposicionesMuseo);
+			this.valoracionesMuseo = inicializadorValoraciones(usuariosMuseo, espaciosMuseo, valoracionesMuseo);
+		} catch (UsuariExeption | ComentariosException | EspacioExeption | ObrasExeption e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	public void Valorar(Usuari creador, int valoracio) {
 		
 	}
-	public void Comentar(Usuari creador, String Comentario) {
+	public void Comentar(Usuari creador, String Comentario) throws ComentariosException {
 		Comentarios comentario = new Comentarios(creador, Comentario);
 	}
 	
-	private ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) {
+	private ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) throws UsuariExeption {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
 		Usuari Primero = new Usuari(nombre[0]);usuarios.add(Primero);Usuari Segundo = new Usuari(nombre[1]);usuarios.add(Segundo);Usuari Tercero = new Usuari(nombre[2]);usuarios.add(Tercero);Usuari Quarto = new Usuari(nombre[3]);usuarios.add(Quarto);Usuari Quinto = new Usuari(nombre[4]);usuarios.add(Quinto);
 		return usuarios;
@@ -67,19 +74,19 @@ public class Controlador {
 			String[] mod3 ={"Pintura","Realisme","Abstraccio"};
 			String[] mod4 ={"Fotografia","Realisme","Abstraccio"};
 			String[] mod5 ={"Realisme"};
-			Exposicions Primero = new Exposicions(mod1, "Antigua grecia", "26-05-2022");expos.add(Primero);
-			Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", "26-05-2022");expos.add(Segundo);
-			Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", "26-05-2022");expos.add(Tercero);
-			Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", "26-05-2022");
-			Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", "26-05-2022");
+			Exposicions Primero = new Exposicions(mod1, "Antigua grecia", 2021, 12, 06);expos.add(Primero);
+			Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", 2022, 05, 16);expos.add(Segundo);
+			Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", 2022, 05 , 12);expos.add(Tercero);
+			Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", 2022, 05, 23);expos.add(Quinto);
+			Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", 2022, 05, 11);expos.add(Quarto);
 		return expos;
 	}
-	private ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris,ArrayList<Comentarios> coment){
-			Comentarios Primero = new	Comentarios(usuaris.get(0), "Ha sido genial");
-			Comentarios Segundo = new	Comentarios(usuaris.get(1), "Ha sido genial");
-			Comentarios Tercero = new	Comentarios(usuaris.get(2), "Ha sido genial");
-			Comentarios Quinto = new	Comentarios(usuaris.get(3), "Ha sido genial");
-			Comentarios Quarto = new	Comentarios(usuaris.get(4), "Ha sido genial");
+	private ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris,ArrayList<Comentarios> coment) throws ComentariosException{
+			Comentarios Primero = new Comentarios(usuaris.get(0), "Ha sido genial");
+			Comentarios Segundo = new Comentarios(usuaris.get(1), "Ha sido genial");
+			Comentarios Tercero = new Comentarios(usuaris.get(2), "Ha sido genial");
+			Comentarios Quinto = new Comentarios(usuaris.get(3), "Ha sido genial");
+			Comentarios Quarto = new Comentarios(usuaris.get(4), "Ha sido genial");
 		return coment; 
 	}
 	private ArrayList<Valoraciones> inicializadorValoraciones(ArrayList<Usuari> usuaris, ArrayList<Espacio> espai ,ArrayList<Valoraciones> Valors) throws ValoracionesExeption{
@@ -90,15 +97,43 @@ public class Controlador {
 		Valoraciones Quarto = new Valoraciones(usuaris.get(4), 6, espai.get(4)); Valors.add(Quarto);
 		return Valors;
 	}
-	private ArrayList<Obras> inicializadorObras(ArrayList<Obras> obrass, ArrayList<Artistas> artista){
-		
+	private ArrayList<Obras> inicializadorObras(ArrayList<Obras> obrass, ArrayList<Artistas> artista) throws ObrasExeption{
+		Obras Primero = new Obras("primero", "fotos", artista.get(0)); obrass.add(Primero);
+		Obras Segunda = new Obras("primero", "fotos", artista.get(0)); obrass.add(Segunda);
+		Obras Tercero = new Obras("primero", "fotos", artista.get(0)); obrass.add(Tercero);
+		Obras Quarto = new Obras("primero", "fotos", artista.get(0)); obrass.add(Quarto);
+		Obras Quinto = new Obras("primero", "fotos", artista.get(0)); obrass.add(Quinto);
 		return obrass;
 	}
 	public String mostrarTodo() {
 		String G="";
 		G+="Usuarios: \n";
 		for (int i = 0; i < usuariosMuseo.size(); i++) {
-			G+=(usuariosMuseo.toString())
+			G+=usuariosMuseo.get(i).toString()+"\n";
+		}
+		G+="Artistas: \n";
+		for (int i = 0; i < artistasMuseo.size(); i++) {
+			G+=artistasMuseo.get(i).toString()+"\n";
+		}
+		G+="Espacios \n";
+		for (int i = 0; i < espaciosMuseo.size(); i++) {
+			G+=espaciosMuseo.get(i).toString()+"\n";
+		}
+		G+="Exposiciones \n";
+		for (int i = 0; i < exposicionesMuseo.size(); i++) {
+			G+=exposicionesMuseo.get(i).toString()+"\n";
+		}
+		G+="Comentarios \n";
+		for (int i = 0; i < comentariosMuseo.size(); i++) {
+			G+=comentariosMuseo.get(i).toString()+"\n";
+		}
+		G+="Valoraciones \n";
+		for (int i = 0; i < valoracionesMuseo.size(); i++) {
+			G+=valoracionesMuseo.get(i).toString()+"\n";
+		}
+		G+="Obras \n";
+		for (int i = 0; i < obrasMuseo.size(); i++) {
+			G+=obrasMuseo.get(i).toString()+"\n";
 		}
 		return G;
 		
