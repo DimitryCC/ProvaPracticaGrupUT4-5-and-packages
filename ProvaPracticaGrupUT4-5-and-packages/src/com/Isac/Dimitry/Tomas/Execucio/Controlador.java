@@ -53,6 +53,14 @@ public class Controlador {
 		}
 		return "No esncontrado";
 	}
+	public String mostrarExpos() {
+		String G="";
+		G+="Exposiciones \n";
+		for (int i = 0; i < exposicionesMuseo.size(); i++) {
+			G+=exposicionesMuseo.get(i).toString()+"\n";
+		}
+		return G+="Usuarios: \n";
+	}
 	private ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) throws UsuariExeption {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
 		Usuari Primero = new Usuari(nombre[0]);usuarios.add(Primero);Usuari Segundo = new Usuari(nombre[1]);usuarios.add(Segundo);Usuari Tercero = new Usuari(nombre[2]);usuarios.add(Tercero);Usuari Quarto = new Usuari(nombre[3]);usuarios.add(Quarto);Usuari Quinto = new Usuari(nombre[4]);usuarios.add(Quinto);
@@ -76,16 +84,11 @@ public class Controlador {
 		return espacios;
 	}
 	private ArrayList<Exposicions> inicialitzadorExposicions(ArrayList<Exposicions> expos){
-			String[] mod1 ={"Pintura", "Escultura",};
-			String[] mod2 ={"Realisme","Abstraccio"};
-			String[] mod3 ={"Pintura","Realisme","Abstraccio"};
-			String[] mod4 ={"Fotografia","Realisme","Abstraccio"};
-			String[] mod5 ={"Realisme"};
-			Exposicions Primero = new Exposicions(mod1, "Antigua grecia", 2021, 12, 06);expos.add(Primero);
-			Exposicions Segundo = new Exposicions(mod2, "Antigua grecia", 2022, 05, 16);expos.add(Segundo);
-			Exposicions Tercero = new Exposicions(mod3, "Antigua grecia", 2022, 05 , 12);expos.add(Tercero);
-			Exposicions Quinto = new Exposicions(mod4, "Antigua grecia", 2022, 05, 23);expos.add(Quinto);
-			Exposicions Quarto = new Exposicions(mod5, "Antigua grecia", 2022, 05, 11);expos.add(Quarto);
+			Exposicions Primero = new Exposicions("Antigua grecia", 2021, 12, 06);expos.add(Primero);
+			Exposicions Segundo = new Exposicions("Antigua grecia", 2022, 05, 16);expos.add(Segundo);
+			Exposicions Tercero = new Exposicions("Antigua grecia", 2022, 05 , 12);expos.add(Tercero);
+			Exposicions Quinto = new Exposicions("Antigua grecia", 2022, 05, 23);expos.add(Quinto);
+			Exposicions Quarto = new Exposicions("Antigua grecia", 2022, 05, 11);expos.add(Quarto);
 		return expos;
 	}
 	private ArrayList<Comentarios> inicializadorComentarios(ArrayList<Usuari> usuaris,ArrayList<Comentarios> coment) throws ComentariosException{
@@ -106,10 +109,15 @@ public class Controlador {
 	}
 	private ArrayList<Obras> inicializadorObras(ArrayList<Obras> obrass, ArrayList<Artistas> artista) throws ObrasExeption{
 		Obras Primero = new Obras("primero", "fotos", artista.get(0)); obrass.add(Primero);
-		Obras Segunda = new Obras("primero", "fotos", artista.get(0)); obrass.add(Segunda);
-		Obras Tercero = new Obras("primero", "fotos", artista.get(0)); obrass.add(Tercero);
-		Obras Quarto = new Obras("primero", "fotos", artista.get(0)); obrass.add(Quarto);
-		Obras Quinto = new Obras("primero", "fotos", artista.get(0)); obrass.add(Quinto);
+		Obras Segunda = new Obras("segundo", "pintura", artista.get(0)); obrass.add(Segunda);
+		Obras Tercero = new Obras("tercero", "escultura", artista.get(0)); obrass.add(Tercero);
+		Obras Quarto = new Obras("quarto", "video", artista.get(0)); obrass.add(Quarto);
+		Obras Quinto = new Obras("quinto", "arte digital", artista.get(0)); obrass.add(Quinto);
+		Obras sexto = new Obras("sexto", "escultura", artista.get(0)); obrass.add(sexto);
+		Obras octavo = new Obras("octavo", "fotos", artista.get(0)); obrass.add(octavo);
+		Obras noveno = new Obras("noveno", "video", artista.get(0)); obrass.add(noveno);
+		Obras decimo = new Obras("decimo", "pintura", artista.get(0)); obrass.add(decimo);
+		Obras undecimo = new Obras("undecimo", "pintura", artista.get(0)); obrass.add(undecimo);
 		return obrass;
 	}
 	public String mostrarTodo() {

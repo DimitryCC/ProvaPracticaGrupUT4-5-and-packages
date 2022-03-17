@@ -14,6 +14,7 @@ public class Pruevas {
 			Controlador hola = new Controlador();
 			System.out.println( hola.mostrarTodo());
 			System.out.println( hola.Filtro("Cafeteria"));
+			System.out.println(hola.mostrarExpos());
 		} catch (ArtistaExeption | ValoracionesExeption e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

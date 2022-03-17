@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.Isaac.Dimitry.Exeptions.ObrasExeption;
+
 public class Exposicions {
 	//Atributs
 	private String titulo;
@@ -13,7 +15,17 @@ public class Exposicions {
 	private ArrayList<Artistas> artistes;
 	private LocalDate data;
 	// Constructors
-	public Exposicions(String[] modalitats, String Nombre, int año, int mes, int dia) {
+	public Exposicions(String Nombre, int año, int mes, int dia) {
+		this.titulo = Nombre;
+		LocalDate dateTime = LocalDate.of(año, mes, dia);
+		this.data = dateTime;
+	}
+	public Exposicions(ArrayList<Obras> exponer, String Nombre, int año, int mes, int dia, Obras destacada) {
+		this.titulo = Nombre;
+		LocalDate dateTime = LocalDate.of(año, mes, dia);
+		this.data = dateTime;
+	}
+	public Exposicions(ArrayList<Obras> exponer, String Nombre, int año, int mes, int dia , Obras...destacada) {
 		this.titulo = Nombre;
 		LocalDate dateTime = LocalDate.of(año, mes, dia);
 		this.data = dateTime;
@@ -34,6 +46,24 @@ public class Exposicions {
 			listadeModalitats+=(listamodalidaades.get(i)+",");
 		}
 		return listadeModalitats;
+	}
+	public void setObras(Obras obra){
+		obras.add(obra);
+	}
+	public void setObras(Obras...obra){
+		for (int i = 0; i < obra.length; i++) {
+			if (obras.contains(obra[i])) {
+				throw new ObrasExeption()
+			}else {
+				obras.add(obra[i]);
+			}
+		}
+	}
+	public void setObrasDes(Obras obra){
+		obraDestacada.add(obra);
+	}
+	public void setObrasDes(Obras...obras){
+		
 	}
 	@Override
 	public String toString() {
