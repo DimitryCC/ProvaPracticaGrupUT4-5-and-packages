@@ -8,12 +8,13 @@ public class Obras {
 	private String nomObra;
 	private String modalitat;
 	private Artistas artista;
-	private File imatge;
+	private String imatge;
 	
-	public Obras(String nomObra, String modalitat, Artistas artista) throws ObrasExeption {
+	public Obras(String nomObra, String modalitat, Artistas artista, String imatge) throws ObrasExeption {
 		setNomObra(nomObra);
 		setModalitat(modalitat); 
 		setArtista(artista);
+		setImatge(imatge);
 	}
 
 	public String getNomObra() {
@@ -43,10 +44,10 @@ public class Obras {
 	public Artistas getArtista() {
 		return artista;
 	}
-	public void setImatge(File imatge) {
+	public void setImatge(String imatge) {
 		this.imatge = imatge;
 	}
-	public File getImatge() {
+	public String getImatge() {
 		return imatge;
 	}
 
