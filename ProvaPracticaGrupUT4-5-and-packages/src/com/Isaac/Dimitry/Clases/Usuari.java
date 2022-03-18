@@ -1,17 +1,21 @@
 package com.Isaac.Dimitry.Clases;
 
 import java.util.ArrayList;
+
+import com.Isaac.Dimitry.Exeptions.EspacioExeption;
 import com.Isaac.Dimitry.Exeptions.UsuariExeption;
 
 public class Usuari {
 
 	
 	private String nombre;
-	private ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
-	private ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
+	private ArrayList<Valoraciones> valor;
+	private ArrayList<Comentarios> comentariosEspacio;
 	
 	public Usuari (String nombre) throws UsuariExeption{// si no especificamos que es publico solo pueden llamar a la funcion este objeto y sus "hiso"
 		setNombre(nombre);
+		ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
+		ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
 	}
 	
 	public String getNombre() {
@@ -34,10 +38,12 @@ public class Usuari {
 		return media;
 	}
 	
-	public void setValor(ArrayList<Valoraciones> valor) {
-		this.valor = valor;
+	public void setValor(Valoraciones valor) {
+		
 	}
-	
+	public void setComentario(Comentarios entradavalor) throws EspacioExeption {
+		comentariosEspacio.add(entradavalor);
+	}
 	void getComentariosEspacio(ArrayList<Comentarios> comentariosEspacio) {
 		for (int i = 0; i < comentariosEspacio.size(); i++) {
 			System.out.println(comentariosEspacio.get(i).toString());

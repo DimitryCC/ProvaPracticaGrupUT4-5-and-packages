@@ -39,11 +39,16 @@ public class Controlador {
 		}
 		
 	}
-	public void Valorar(Usuari creador, int valoracio) {
-		
+	public void Valorar(Usuari creador, int valoracio, Espacio espai) throws ValoracionesExeption, EspacioExeption {
+		Valoraciones valorado = new Valoraciones(creador, valoracio, espai);
+		valoracionesMuseo.add(valorado);
+		espaciosMuseo.get(espaciosMuseo.indexOf(espai)).setValor(valorado);
+		usuariosMuseo.get(usuariosMuseo.indexOf(creador)).setValor(valorado);
 	}
-	public void Comentar(Usuari creador, String Comentario) throws ComentariosException {
+	public void Comentar(Usuari creador, String Comentario, Espacio espai) throws ComentariosException, EspacioExeption {
 		Comentarios comentario = new Comentarios(creador, Comentario);
+		espaciosMuseo.get(espaciosMuseo.indexOf(espai)).setComentario(comentario);
+		usuariosMuseo.get(usuariosMuseo.indexOf(creador)).setComentario(comentario);
 	}
 	public String Filtro(String busqueda) {
 		for (int i = 0; i < espaciosMuseo.size(); i++) {
@@ -52,6 +57,15 @@ public class Controlador {
 			}
 		}
 		return "No esncontrado";
+	}
+	public int Filtro(Espacio busqueda) {
+		for (int i = 0; i < espaciosMuseo.size(); i++) {
+			if (espaciosMuseo.get(i).equals(busqueda)) {
+				return i;
+			}
+		}
+		//El Espacio 0 es el not found (No encontrado indicando que no se ha encontrado nigun espacio con ese nombre)
+		return 0;
 	}
 	public String mostrarExpos() {
 		String G="";
@@ -76,6 +90,7 @@ public class Controlador {
 	}
 	//Public ArrayList<Obras> = new ArrayList<Obras>();
 	private ArrayList<Espacio> inicializarEspacios(ArrayList<Espacio> espacios) throws EspacioExeption{
+		String[] notfoundl ={"notfound"}; Espacio notfound = new Espacio("notfound", "notfound",notfoundl);espacios.add(notfound);
 		String[] Prim ={"Pintura"}; Espacio Primero = new Espacio("Recepcion", "Un lugar agradable",Prim);espacios.add(Primero);
 		String[] Seg ={"Pintura"}; Espacio Segundo = new Espacio("Cafeteria", "Un lugar agradable",Seg);espacios.add(Segundo);
 		String[] Ter ={"Pintura"}; Espacio Tercero = new Espacio("Piscina", "Un lugar agradable",Ter);espacios.add(Tercero);

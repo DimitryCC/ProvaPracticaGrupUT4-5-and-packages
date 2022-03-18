@@ -3,7 +3,7 @@ package com.Isaac.Dimitry.Clases;
 import com.Isaac.Dimitry.Exeptions.ComentariosException;
 
 public class Comentarios {
-	
+	private Espacio espai;
 	private Usuari creador;
 	private String comentari;
 	private boolean validacion = false;

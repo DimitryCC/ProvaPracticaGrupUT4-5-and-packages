@@ -50,10 +50,10 @@ public class Exposicions {
 	public void setObras(Obras obra){
 		obras.add(obra);
 	}
-	public void setObras(Obras...obra){
+	public void setObras(Obras...obra) throws ObrasExeption{
 		for (int i = 0; i < obra.length; i++) {
 			if (obras.contains(obra[i])) {
-				throw new ObrasExeption()
+				throw new ObrasExeption();
 			}else {
 				obras.add(obra[i]);
 			}
