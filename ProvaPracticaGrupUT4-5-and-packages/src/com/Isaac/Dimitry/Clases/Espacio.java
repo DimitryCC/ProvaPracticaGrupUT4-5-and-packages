@@ -38,8 +38,11 @@ public class Espacio {
 		}*/
 	}
 	//Esta vacio porque quiero que esta funcion pueda ser llamada por cualquier otra clase del paquete.
-	 void setValor(Valoraciones entradavalor) throws EspacioExeption {
+	public void setValor(Valoraciones entradavalor) throws EspacioExeption {
 		valor.add(entradavalor);
+	}
+	public void setComentario(Comentarios entradavalor) throws EspacioExeption {
+		comentariosEspacio.add(entradavalor);
 	}
 	 //Esta vacio porque quiero que esta funcion pueda ser llamada por cualquier otra clase del paquete.
 	 void setComentariosEspacio(Comentarios EntradacomentariosEspacio) throws EspacioExeption {
