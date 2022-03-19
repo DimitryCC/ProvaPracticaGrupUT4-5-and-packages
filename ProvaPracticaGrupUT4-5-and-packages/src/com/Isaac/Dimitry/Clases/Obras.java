@@ -1,6 +1,7 @@
 package com.Isaac.Dimitry.Clases;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import com.Isaac.Dimitry.Exeptions.ObrasExeption;
 
@@ -16,7 +17,13 @@ public class Obras {
 		setArtista(artista);
 		setImatge(imatge);
 	}
-
+	public String getObra(Obras obra, ArrayList<Obras> arrayobras) {
+		String texto;
+		texto = "[" + arrayobras.get(arrayobras.indexOf(obra)).getNomObra()+"/";
+		texto += arrayobras.get(arrayobras.indexOf(obra)).getModalitat()+"]";
+		return texto;
+		
+	}
 	public String getNomObra() {
 		return nomObra;
 	}
@@ -28,7 +35,6 @@ public class Obras {
 			this.nomObra = nomObra;
 		}		
 	}
-
 	public String getModalitat() {
 		return modalitat;
 	}

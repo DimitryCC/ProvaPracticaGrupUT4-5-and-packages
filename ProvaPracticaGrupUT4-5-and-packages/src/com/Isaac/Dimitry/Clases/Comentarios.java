@@ -6,10 +6,11 @@ public class Comentarios {
 	private Espacio espai;
 	private Usuari creador;
 	private String comentari;
-	private boolean validacion = false;
+	private boolean validacion;
 	
 	public Comentarios (Usuari creador, String comentari) throws ComentariosException{// si no especificamos que es publico solo pueden llamar a la funcion este objeto y sus "hiso"
 			setCreador(creador);
+			this.validacion=false;
 			setComentari(comentari); 
 	}
 	

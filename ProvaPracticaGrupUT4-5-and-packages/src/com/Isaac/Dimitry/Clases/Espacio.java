@@ -8,17 +8,22 @@ import com.Isaac.Dimitry.Exeptions.EspacioExeption;
 public class Espacio {
 	//Atributos
 	private String nom;
+	private String imagen;
 	private Exposicions espo;
 	private String detalles;
-	private ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
-	private ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
-	private String[] Servicios;
+	private ArrayList<Valoraciones> valor;
+	private ArrayList<Comentarios> comentariosEspacio;
+	private ArrayList<String> servicios;
 	//Constructor
-	public Espacio(String nom, String detalles, String[] servicios) throws EspacioExeption {
+	public Espacio(String nom, String detalles, String imagen, String...strings) throws EspacioExeption {
 		//Usaremos en este caso los seters para generar el espacio ya quesi solo deveremos especificar las exepciones en estos
+		ArrayList<String> Servicios = new ArrayList<String>();
+		ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
+		ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
 		setNom(nom);
 		setDetalles(detalles);
-		setServicios(servicios);
+		setServicios(strings);
+		
 		//faltan seters ya que estos no se deven inicializar ya que teoricamente se inicializaran durante el proceso de ejecucion esdecir los iniciara el programa
 	}
 	//Geters and Seters
@@ -29,15 +34,12 @@ public class Espacio {
 			this.nom = nom;
 		}
 	}
+	private void setImagen(String imagen) {
+		this.imagen=imagen;
+	}
 	private void setDetalles(String detalles) throws EspacioExeption {
 		this.detalles = detalles;
-		/*if (condition) {
-			*throw new EspacioExeption();
-		*} else {
-		*	this.detalles = detalles;
-		}*/
 	}
-	//Esta vacio porque quiero que esta funcion pueda ser llamada por cualquier otra clase del paquete.
 	public void setValor(Valoraciones entradavalor) throws EspacioExeption {
 		valor.add(entradavalor);
 	}
@@ -48,8 +50,17 @@ public class Espacio {
 	 void setComentariosEspacio(Comentarios EntradacomentariosEspacio) throws EspacioExeption {
 		comentariosEspacio.add(EntradacomentariosEspacio);
 	}
-	private void setServicios(String[] servicios) throws EspacioExeption {
-		Servicios = servicios;
+	public void setServicios(String[] serviciosEntrada) throws EspacioExeption {
+		for (int i = 0; i < serviciosEntrada.length; i++) {
+			servicios.add(serviciosEntrada[i]);
+		}
+	}
+	//Eliminar servicio
+	public void removeServicio(String servicio) {
+		servicios.remove(servicio);
+	}
+	public void setServicios(String serviciosEntrada) throws EspacioExeption {
+			servicios.add(serviciosEntrada);
 	}
 	private void setExposicions(Exposicions espo2) throws EspacioExeption {
 		if (espo2.equals(null)) {
@@ -57,6 +68,12 @@ public class Espacio {
 		} else {
 			this.espo=espo2;
 		}
+	}
+	//Funcion para sacar la informacion de la exposicion
+	public String mostrarinfo(Espacio esp) {
+		String texto = "";
+		texto = "["+espo.getTitulo()+"/"+servicios.toString()+"]";
+		return texto;
 	}
 	public String getNom() {
 		return nom;
@@ -78,13 +95,13 @@ public class Espacio {
 			System.out.println(comentariosEspacio.get(i).toString());
 		}
 	}
-	public String[] getServicios() {
-		return Servicios;
+	public String getServicios() {
+		return servicios.toString();
 	}
 	@Override
 	public String toString() {
 		return "Espacio [nom=" + nom + ", espo=" + espo + ", detalles=" + detalles + ", valor=" + valor
-				+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios=" + Arrays.toString(Servicios) + "]";
+				+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios=" + servicios.toString() + "]";
 	}
 	
 }

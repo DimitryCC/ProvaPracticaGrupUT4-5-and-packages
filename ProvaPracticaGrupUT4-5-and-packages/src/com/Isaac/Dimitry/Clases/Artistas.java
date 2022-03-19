@@ -9,10 +9,12 @@ import com.Isaac.Dimitry.Exeptions.ArtistaExeption;
 public class Artistas {
 	//Atributs
 	private String nomArtista;
+	private String imagen;
 	private String nacionalitat;
 	private ArrayList<Obras> obras;
 	
-	public Artistas(String nomArtista, String nacionalitat) throws ArtistaExeption {
+	public Artistas(String nomArtista, String nacionalitat, String imagen) throws ArtistaExeption {
+		this.imagen = imagen;
 		setNomArtista(nomArtista);
 		setNacionalitat(nacionalitat);
 	}

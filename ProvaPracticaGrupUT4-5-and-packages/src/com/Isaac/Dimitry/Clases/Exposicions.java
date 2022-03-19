@@ -9,43 +9,49 @@ import com.Isaac.Dimitry.Exeptions.ObrasExeption;
 public class Exposicions {
 	//Atributs
 	private String titulo;
-	private String[] modalitats;
+	private ArrayList<String> modalitats;
 	private ArrayList<Obras> obraDestacada;
 	private ArrayList<Obras> obras;
 	private ArrayList<Artistas> artistes;
 	private LocalDate data;
 	// Constructors
-	public Exposicions(String Nombre, int año, int mes, int dia) {
+	public Exposicions(String Nombre, int ano, int mes, int dia, ArrayList<Obras> obrasEntrada) {
+		ArrayList<Obras> obras = new ArrayList<Obras>();
+		obras = obrasEntrada;
 		this.titulo = Nombre;
-		LocalDate dateTime = LocalDate.of(año, mes, dia);
+		LocalDate dateTime = LocalDate.of(ano, mes, dia);
+		this.data = dateTime;
+		
+	}
+	public Exposicions(ArrayList<Obras> exponer, String Nombre, int ano, int mes, int dia, Obras destacada) {
+		this.titulo = Nombre;
+		LocalDate dateTime = LocalDate.of(ano, mes, dia);
 		this.data = dateTime;
 	}
-	public Exposicions(ArrayList<Obras> exponer, String Nombre, int año, int mes, int dia, Obras destacada) {
+	public Exposicions(ArrayList<Obras> exponer, String Nombre, int ano, int mes, int dia , Obras...destacada) {
 		this.titulo = Nombre;
-		LocalDate dateTime = LocalDate.of(año, mes, dia);
+		LocalDate dateTime = LocalDate.of(ano, mes, dia);
 		this.data = dateTime;
 	}
-	public Exposicions(ArrayList<Obras> exponer, String Nombre, int año, int mes, int dia , Obras...destacada) {
-		this.titulo = Nombre;
-		LocalDate dateTime = LocalDate.of(año, mes, dia);
-		this.data = dateTime;
-	}
-	public String setModalitats (ArrayList<Obras> obras2){
-		String listadeModalitats="";
-		ArrayList<String> listamodalidaades = new ArrayList<String>();
+	public ArrayList<String> setModalitats (ArrayList<Obras> obras2){
+		ArrayList<String> modalitats = new ArrayList<String>();
+		boolean anyadir = false;
 		for (int i = 0; i < obras2.size(); i++) {
-			if (i>0) {
-				if (!listamodalidaades.contains(obras2.get(i).getModalitat())) {
-					listamodalidaades.add(obras2.get(i).getModalitat());
-				}
+			if (i==0) {
+				modalitats.add(obras.get(i).getModalitat());
 			} else {
-				listamodalidaades.add(obras2.get(i).getModalitat());
+				if (anyadir = true) {
+					for (String string : modalitats) {
+						if (obras2.get(i).getModalitat()!= string) {
+							anyadir=true;
+						}
+					}
+				modalitats.add(obras.get(i).getModalitat());
+				}
+				anyadir=false;
 			}
 		}
-		for (int i = 0; i < listamodalidaades.size(); i++) {
-			listadeModalitats+=(listamodalidaades.get(i)+",");
-		}
-		return listadeModalitats;
+		return modalitats;
 	}
 	public void setObras(Obras obra){
 		obras.add(obra);
@@ -59,15 +65,30 @@ public class Exposicions {
 			}
 		}
 	}
+	//coparar fechas
+	public boolean compararFechas(LocalDate fecha) {
+		if (fecha.equals(data)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public String getTitulo() {
+		return titulo;
+	}
 	public void setObrasDes(Obras obra){
 		obraDestacada.add(obra);
 	}
 	public void setObrasDes(Obras...obras){
 		
 	}
+	//mostrar expo
+	public String mostrarObras() {
+		return titulo;
+	}
 	@Override
 	public String toString() {
-		return "Exposicions [titulo=" + titulo + ", modalitats=" + Arrays.toString(modalitats) + ", obraDestacada="
+		return "Exposicions [titulo=" + titulo + ", modalitats=" + modalitats.toString() + ", obraDestacada="
 				+ obraDestacada + ", obras=" + obras + ", artistes=" + artistes + ", data=" + data + "]";
 	}
 }
