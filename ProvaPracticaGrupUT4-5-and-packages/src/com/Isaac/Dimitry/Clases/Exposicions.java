@@ -88,8 +88,14 @@ public class Exposicions {
 	}
 	@Override
 	public String toString() {
-		return "Exposicions [titulo=" + titulo + ", modalitats=" + modalitats.toString() + ", obraDestacada="
-				+ obraDestacada + ", obras=" + obras + ", artistes=" + artistes + ", data=" + data + "]";
+		if (modalitats != null) {
+			return "Exposicions [titulo=" + titulo + ", modalitats=" + modalitats.toString() + ", obraDestacada="
+					+ obraDestacada + ", obras=" + obras + ", artistes=" + artistes + ", data=" + data + "]";
+		}else {
+			return "Exposicions [titulo=" + titulo + ", modalitats= , obraDestacada="
+					+ obraDestacada + ", obras=" + obras + ", artistes=" + artistes + ", data=" + data + "]";
+		}
+		
 	}
 }
 /*

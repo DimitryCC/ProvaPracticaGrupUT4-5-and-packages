@@ -17,14 +17,22 @@ public class Espacio {
 	//Constructor
 	public Espacio(String nom, String detalles, String imagen, String...strings) throws EspacioExeption {
 		//Usaremos en este caso los seters para generar el espacio ya quesi solo deveremos especificar las exepciones en estos
-		ArrayList<String> Servicios = new ArrayList<String>();
 		ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
 		ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
+		ArrayList<String> servicios = new ArrayList<String>();
 		setNom(nom);
 		setDetalles(detalles);
 		setServicios(strings);
-		
-		//faltan seters ya que estos no se deven inicializar ya que teoricamente se inicializaran durante el proceso de ejecucion esdecir los iniciara el programa
+	}
+	public Espacio(String nom, String detalles, String imagen, String strings) throws EspacioExeption {
+		//Usaremos en este caso los seters para generar el espacio ya quesi solo deveremos especificar las exepciones en estos
+		ArrayList<Valoraciones> valor = new ArrayList<Valoraciones>();
+		ArrayList<Comentarios> comentariosEspacio = new ArrayList<Comentarios>();
+		ArrayList<String> servicios = new ArrayList<String>();
+		servicios.add(strings);
+		setNom(nom);
+		setDetalles(detalles);
+		setServicios(strings);
 	}
 	//Geters and Seters
 	private void setNom(String nom) throws EspacioExeption {
@@ -100,8 +108,13 @@ public class Espacio {
 	}
 	@Override
 	public String toString() {
-		return "Espacio [nom=" + nom + ", espo=" + espo + ", detalles=" + detalles + ", valor=" + valor
-				+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios=" + servicios.toString() + "]";
+		if (servicios != null) {
+			return "Espacio [nom=" + nom + ", espo=" + espo + ", detalles=" + detalles + ", valor=" + valor
+					+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios=" + servicios.toString() + "]";
+		}else {
+			return "Espacio [nom=" + nom + ", espo=" + espo + ", detalles=" + detalles + ", valor=" + valor
+					+ ", comentariosEspacio=" + comentariosEspacio + ", Servicios= ]";
+		}
 	}
 	
 }

@@ -25,7 +25,7 @@ public class Controlador {
 		ArrayList<Exposicions> exposicionesMuseo = new ArrayList<Exposicions>();
 		ArrayList<Comentarios> comentariosMuseo = new ArrayList<Comentarios>();
 		ArrayList<Valoraciones> valoracionesMuseo = new ArrayList<Valoraciones>();
-		inicializador();
+		inicializador(usuariosMuseo, artistasMuseo, espaciosMuseo, obrasMuseo, exposicionesMuseo, comentariosMuseo, valoracionesMuseo);
 	}
 	
 	//Registrar servicio
@@ -144,7 +144,7 @@ public class Controlador {
 		artistasMuseo.add(hola);
 	}
 	//Inicializador (de todos los objetos a la vez)
-	private void inicializador(){
+	private void inicializador(ArrayList<Usuari> usuariosMuseo, ArrayList<Artistas> artistasMuseo, ArrayList<Espacio> espaciosMuseo, ArrayList<Obras> obrasMuseo, ArrayList<Exposicions> exposicionesMuseo, ArrayList<Comentarios> comentariosMuseo, ArrayList<Valoraciones> valoracionesMuseo){
 		try {
 			this.usuariosMuseo = iniciadorUsuarios(usuariosMuseo);
 			this.comentariosMuseo = inicializadorComentarios(usuariosMuseo, comentariosMuseo);
@@ -161,7 +161,12 @@ public class Controlador {
 	//Generador de usuarios
 	private ArrayList<Usuari> iniciadorUsuarios(ArrayList<Usuari> usuarios) throws UsuariExeption {
 		String[] nombre= {"Juan","Miriam","Adian","eduardo","Bladislab"};
-		Usuari primero = new Usuari(nombre[0]);usuarios.add(primero);Usuari segundo = new Usuari(nombre[1]);usuarios.add(segundo);Usuari tercero = new Usuari(nombre[2]);usuarios.add(tercero);Usuari quarto = new Usuari(nombre[3]);usuarios.add(quarto);Usuari quinto = new Usuari(nombre[4]);usuarios.add(quinto);
+		Usuari primero = new Usuari(nombre[0]);
+		usuarios.add(primero);
+		Usuari segundo = new Usuari(nombre[1]);usuarios.add(segundo);
+		Usuari tercero = new Usuari(nombre[2]);usuarios.add(tercero);
+		Usuari quarto = new Usuari(nombre[3]);usuarios.add(quarto);
+		Usuari quinto = new Usuari(nombre[4]);usuarios.add(quinto);
 		return usuarios;
 	}
 	//Generador de Artistas 
@@ -175,7 +180,7 @@ public class Controlador {
 	}
 	//Generador de Espacios
 	private ArrayList<Espacio> inicializarEspacios(ArrayList<Espacio> espacios) throws EspacioExeption{
-		Espacio notfound = new Espacio("notfound", "notfound", "notfoundl", "C:\\Users\\museo\\Downloads\\imagen.png");espacios.add(notfound);
+		Espacio notfound = new Espacio("Cafeteria", "Esbonito", "C:\\Users\\museo\\Downloads\\imagen.png");espacios.add(notfound);
 		Espacio primero = new Espacio("Recepcion", "Un lugar agradable", "C:\\Users\\museo\\Downloads\\imagen.png");espacios.add(primero);
 		Espacio segundo = new Espacio("Cafeteria", "Un lugar agradable", "C:\\Users\\museo\\Downloads\\imagen.png");espacios.add(segundo);
 		Espacio tercero = new Espacio("Piscina", "Un lugar agradable", "C:\\Users\\museo\\Downloads\\imagen.png");espacios.add(tercero);
